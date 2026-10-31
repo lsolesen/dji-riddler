@@ -4,7 +4,7 @@ export const mission5Data = {
     id: 5,
     title: "M5: Befrielsens Minutter & Afvæbningen",
     period: "4.-5. maj 1945",
-    banner: "/images/mission-5.jpg",
+    banner: "./images/mission-5.jpg",
     desc: "Klokken er 20:34 den 4. maj 1945. BBC i London sender frihedsbudskabet, men tyskerne forsøger at overdøve frekvensen med støjsendere. I skal tune radiobølgerne ind, modtage overgivelsesordren og koordinere afvæbningen i Vejle, mens stearinlysene tændes i vinduerne.",
 
     // FASE 1: Radio-synkronisering

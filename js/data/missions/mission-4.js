@@ -4,7 +4,7 @@ export const mission4Data = {
     id: 4,
     title: "M4: Ambulancen og Razziaen i Vejle",
     period: "8. april 1945",
-    banner: "/images/mission-4.jpg",
+    banner: "./images/mission-4.jpg",
     desc: "12 modstandsmænd er arresteret i Vejle. Gestapo er på vej mod det centrale våbendepot. Modstandsbevægelsen har rekvireret en ambulance (Ford V8) og læsset alle våben og en illegal radiosender ombord. I har under 15 minutter til at navigere ambulancen uden om patruljerne og åbne porten til Jomsborg, 5 minutter før Gestapo rammer skjulestedet.",
     
     // FASE 1: De 3 rute-etaper

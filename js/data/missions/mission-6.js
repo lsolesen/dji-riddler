@@ -4,7 +4,7 @@ export const mission6Data = {
     id: 6,
     title: "M6: Fremkaldelsen af »Flæskestegen«",
     period: "5. maj 1945",
-    banner: "/images/mission-6.jpg",
+    banner: "./images/mission-6.jpg",
     desc: "Befrielsen er en kendsgerning. I mørkekammeret på DJI skal de hemmelige 16mm-filmoptagelser fra kameraet 'Flæskestegen' fremkaldes og klippes sammen, så historien om Jomsborgs modstandsfolk kan dokumenteres for eftertiden.",
 
     // Hold Skole: Mørkekammerets 4 rå filmnegativer og kemibad

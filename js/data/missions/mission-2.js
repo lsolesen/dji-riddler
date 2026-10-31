@@ -4,7 +4,7 @@ export const mission2Data = {
     id: 2,
     title: "M2: Den Illegale Våbeninstruktion",
     period: "April 1945",
-    banner: "/images/mission-2.jpg",
+    banner: "./images/mission-2.jpg",
     desc: "Udenfor siler regnen ned, og dørene til gymnastiksalen er låst. Dækhistorien er et 'håndboldkursus', men på gulvet står kasserne med våben og sprængstof. I skal klargøre en sabotagebombe til nattens togaktion ud fra modstandens hemmelige manual.",
     
     // Hold Skole: Komponenter på arbejdsbordet

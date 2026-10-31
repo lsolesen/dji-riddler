@@ -13,7 +13,7 @@ export function showIntro(container) {
             </header>
 
             <div class="visual-wrapper">
-                <img src="/images/role-chooser.jpg" alt="Den Jyske Idrætsskole 1944" class="role-chooser-img">
+                <img src="./images/role-chooser.jpg" alt="Den Jyske Idrætsskole 1944" class="role-chooser-img">
             </div>
 
             <section class="briefing-box">

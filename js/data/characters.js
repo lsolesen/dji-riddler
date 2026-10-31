@@ -7,7 +7,7 @@ export const characters = {
         title: "Svend Aage Thomsen & Thormod Petersen",
         team: "Skole",
         description: "Forstanderen og eleven. I har adgang til bygningen, værelserne, elevprotokollen, kloakken og 16mm-kameraet 'Flæskestegen'.",
-        avatar: "/images/role-chooser.jpg",
+        avatar: "./images/role-chooser.jpg",
         badge: "🏢 SKOLEHOLDET"
     },
     modstand: {
@@ -16,7 +16,7 @@ export const characters = {
         title: "Willy Eisfeldt & Holger Dencker",
         team: "Modstand",
         description: "Overbetjenten og sabotøren. I sidder med de hemmelige politirapporter, SOE-manualerne, radiofrekvenserne og flugtruterne.",
-        avatar: "/images/role-chooser.jpg",
+        avatar: "./images/role-chooser.jpg",
         badge: "🕶️ MODSTANDSHOLDET"
     }
 };

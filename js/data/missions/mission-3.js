@@ -4,7 +4,7 @@ export const mission3Data = {
     id: 3,
     title: "M3: Rummet under Ross' Seng",
     period: "April 1945",
-    banner: "/images/mission-3.jpg",
+    banner: "./images/mission-3.jpg",
     desc: "Gestapo har taget en af modstandens mænd i Vejle. Sprængstoffet i kloakrensningsanlægget må flyttes i nattens mulm og mørke. Svend Aage Thomsen har lavet et hemmeligt rum under gulvet på Jomsborg under Ross Sørensens seng. Tøm kloakken og udløs fjedermekanismen.",
     
     // Hold Skole: Fjedermekanismen under sengen & Hydraulikreglerne for kloakken

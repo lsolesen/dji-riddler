@@ -4,7 +4,7 @@ export const mission1Data = {
     id: 1,
     title: "M1: Indskrivningen under Jorden",
     period: "Efterår 1944",
-    banner: "/images/mission-1.jpg",
+    banner: "./images/mission-1.jpg",
     desc: "3 underjordiske politibetjente er ankommet til Jomsborg i civil. De må placeres på værelserne med det samme efter strenge sikkerhedskrav, inden Gestapos kontrollør ankommer.",
     
     // Hold Skole: Plantegning over værelserne på Jomsborg
