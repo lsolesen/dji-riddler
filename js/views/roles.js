@@ -6,48 +6,50 @@ export function showRoleChooser(container) {
     const html = `
         <div class="scene-container fade-in">
             <header class="vintage-header">
-                <h2>VÆLG DIT SPILLESPORET</h2>
-                <p>Spillet kræver to skærme. Aftal hvem der tager hvilket spor:</p>
+                <h2>VÆLG DIT PERSPEKTIV</h2>
+                <p>Spillet spilles på to skærme i tæt samarbejde. Aftal hvem der tager hvem:</p>
             </header>
 
             <div class="visual-wrapper">
-                <img src="./images/role-chooser.jpg" alt="Den Jyske Idrætsskole 1944" class="role-chooser-img">
+                <img src="./images/role-chooser.jpg" alt="Thormod Petersen og Willy Eisfeldt 1944" class="role-chooser-img">
             </div>
 
             <div class="tracks-selection-grid">
-                <!-- Spor 1: Skole -->
-                <div class="track-card skole-track" id="card-skole">
+                <!-- Person 1: Thormod Petersen -->
+                <div class="track-card skole-track" id="card-thormod">
                     <div class="track-header">
-                        <span class="track-device-tag">SKÆRM 1</span>
-                        <h3>🏢 SKOLEHOLDET</h3>
-                        <small class="track-names">Svend Aage Thomsen & Thormod Petersen</small>
+                        <span class="track-device-tag">SKÆRM 1 // VENSTRE</span>
+                        <h3>${characters.thormod.name}</h3>
+                        <small class="track-names">${characters.thormod.title}</small>
                     </div>
                     <p class="track-desc">
-                        ${characters.skole.description}
+                        ${characters.thormod.description}
                     </p>
                     <div class="track-focus-box">
-                        <strong>Dit fokus:</strong> Bygningens hemmeligheder, plantegninger, fjedermekanismer og arbejdsborde.
+                        <strong>Historisk netværk:</strong> ${characters.thormod.network}.<br>
+                        <strong>Fokus i opgaverne:</strong> Bygningen, værelserne, gulvrummene under sengen og 16mm-mørkekammeret.
                     </div>
-                    <button class="btn btn-primary btn-large btn-choose-track" data-track="skole">
-                        VÆLG SKOLEHOLDET ➔
+                    <button class="btn btn-primary btn-large btn-choose-track" data-track="thormod">
+                        SPIL SOM THORMOD ➔
                     </button>
                 </div>
 
-                <!-- Spor 2: Modstand -->
-                <div class="track-card modstand-track" id="card-modstand">
+                <!-- Person 2: Willy Eisfeldt -->
+                <div class="track-card modstand-track" id="card-eisfelt">
                     <div class="track-header">
-                        <span class="track-device-tag">SKÆRM 2</span>
-                        <h3>🕶️ MODSTANDSHOLDET</h3>
-                        <small class="track-names">Willy Eisfeldt & Holger Dencker</small>
+                        <span class="track-device-tag">SKÆRM 2 // HØJRE</span>
+                        <h3>${characters.eisfelt.name}</h3>
+                        <small class="track-names">${characters.eisfelt.title}</small>
                     </div>
                     <p class="track-desc">
-                        ${characters.modstand.description}
+                        ${characters.eisfelt.description}
                     </p>
                     <div class="track-focus-box">
-                        <strong>Dit fokus:</strong> Hemmelige efterretninger, SOE-instrukser, felt-radioer og kodeord.
+                        <strong>Historisk netværk:</strong> ${characters.eisfelt.network}.<br>
+                        <strong>Fokus i opgaverne:</strong> Gestapo-efterretninger, SOE-bombemanualer, radiobølger og kodeord.
                     </div>
-                    <button class="btn btn-primary btn-large btn-choose-track" data-track="modstand">
-                        VÆLG MODSTANDSHOLDET ➔
+                    <button class="btn btn-primary btn-large btn-choose-track" data-track="eisfelt">
+                        SPIL SOM EISFELDT ➔
                     </button>
                 </div>
             </div>

@@ -3601,3 +3601,14 @@ h1, h2, h3, .stamp {
     width: 100%;
     text-align: center;
 }
+
+/* Præcis centrering af ansigter fra det nye role-chooser.jpg */
+.avatar-crop.thormod {
+    object-position: 28% 25%;
+    transform: scale(2.2);
+}
+
+.avatar-crop.eisfelt {
+    object-position: 72% 25%;
+    transform: scale(2.2);
+}

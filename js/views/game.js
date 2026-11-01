@@ -18,21 +18,21 @@ const missionViews = {
 };
 
 export function showMission(container, chapter, role) {
-    const char = characters[role] || characters['skole'];
+    const char = characters[role] || characters['thormod'];
     const mission = missions[chapter];
 
     const html = `
         <div class="scene-container fade-in">
             <header class="game-header">
-                <div class="avatar-badge clickable ${char.team.toLowerCase()}" id="avatar-badge-btn" title="Klik for at skifte spor">
+                <div class="avatar-badge clickable ${char.team.toLowerCase()}" id="avatar-badge-btn" title="Klik for at skifte identitet">
                     <div class="avatar-circle">
-                        <span style="font-size: 1.4rem;">${char.team === 'Skole' ? '🏢' : '🕶️'}</span>
+                        <!-- Her er det rigtige avatar-billede tilbage! -->
+                        <img src="${char.avatar}" alt="${char.name}" class="avatar-crop ${char.id}">
                     </div>
                     <div class="avatar-meta">
                         <span class="avatar-name">${char.name}</span>
                         <span class="avatar-role">${char.title}</span>
                     </div>
-                    <span class="avatar-switch-hint">⇄ Skift spor</span>
                 </div>
                 <div class="chapter-stamp">MISSION ${chapter}</div>
             </header>
@@ -51,31 +51,34 @@ export function showMission(container, chapter, role) {
             </div>
         </div>
 
-        <!-- Hurtig-skifter mellem de 2 spor -->
         <div id="role-modal-overlay" class="modal-overlay" style="display: none;">
             <div class="modal-card">
                 <div class="modal-header">
-                    <h3>SKIFT SPOR</h3>
+                    <h3>SKIFT IDENTITET</h3>
                     <button id="close-modal-btn" class="modal-close-btn">&times;</button>
                 </div>
-                <p class="modal-intro">Er du havnet på det forkerte spor i forhold til din makker?</p>
+                <p class="modal-intro">Er du havnet på den forkerte person i forhold til din makker?</p>
                 <div class="modal-roles-list">
-                    <div class="modal-role-card ${char.id === 'skole' ? 'active-role' : ''} skole" data-track-id="skole">
-                        <div class="avatar-circle"><span style="font-size: 1.4rem;">🏢</span></div>
-                        <div class="modal-role-meta">
-                            <div class="modal-role-name">Skoleholdet</div>
-                            <div class="modal-role-title">Thomsen & Thormod</div>
+                    <div class="modal-role-card ${char.id === 'thormod' ? 'active-role' : ''} skole" data-track-id="thormod">
+                        <div class="avatar-circle">
+                            <img src="${characters.thormod.avatar}" alt="Thormod" class="avatar-crop thormod">
                         </div>
-                        ${char.id === 'skole' ? '<span class="current-label">Aktiv nu</span>' : '<button class="btn btn-sm">Skift hertil</button>'}
+                        <div class="modal-role-meta">
+                            <div class="modal-role-name">${characters.thormod.name}</div>
+                            <div class="modal-role-title">${characters.thormod.title}</div>
+                        </div>
+                        ${char.id === 'thormod' ? '<span class="current-label">Aktiv nu</span>' : '<button class="btn btn-sm">Vælg Thormod</button>'}
                     </div>
 
-                    <div class="modal-role-card ${char.id === 'modstand' ? 'active-role' : ''} modstand" data-track-id="modstand">
-                        <div class="avatar-circle"><span style="font-size: 1.4rem;">🕶️</span></div>
-                        <div class="modal-role-meta">
-                            <div class="modal-role-name">Modstandsholdet</div>
-                            <div class="modal-role-title">Eisfeldt & Dencker</div>
+                    <div class="modal-role-card ${char.id === 'eisfelt' ? 'active-role' : ''} modstand" data-track-id="eisfelt">
+                        <div class="avatar-circle">
+                            <img src="${characters.eisfelt.avatar}" alt="Eisfeldt" class="avatar-crop eisfelt">
                         </div>
-                        ${char.id === 'modstand' ? '<span class="current-label">Aktiv nu</span>' : '<button class="btn btn-sm">Skift hertil</button>'}
+                        <div class="modal-role-meta">
+                            <div class="modal-role-name">${characters.eisfelt.name}</div>
+                            <div class="modal-role-title">${characters.eisfelt.title}</div>
+                        </div>
+                        ${char.id === 'eisfelt' ? '<span class="current-label">Aktiv nu</span>' : '<button class="btn btn-sm">Vælg Eisfeldt</button>'}
                     </div>
                 </div>
             </div>
