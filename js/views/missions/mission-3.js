@@ -21,9 +21,9 @@ export function initMission3(container, char, missionData, onComplete) {
     `;
 
     if (char.team === 'Skole') {
-        setupSchoolFloorInteractions(container, missionData, state, onComplete);
+        setupSchoolFloorInteractions(container, char, missionData, state, onComplete);
     } else {
-        setupResistanceSewerInteractions(container, missionData, state, onComplete);
+        setupResistanceSewerInteractions(container, char, missionData, state, onComplete);
     }
 }
 
@@ -89,9 +89,9 @@ function renderSchoolFloor(mission, state) {
                 `}
             </div>
 
-            ${state.roomSealed ? `
+            ${state.trapdoorOpen || state.roomSealed ? `
                 <div class="approved-banner fade-in">
-                    ✓ GULVBRÆDDERNE ER LAGT PÅ PLADS. ROSS SOVER TRYGT PÅ 100 KG SPRÆNGSTOF.
+                    ✓ GULVBRÆDDERNE ER ÅBNET OG FORSEGLEDE. ROSS SOVER TRYGT PÅ 100 KG SPRÆNGSTOF.
                 </div>
             ` : ''}
         </div>
@@ -100,8 +100,6 @@ function renderSchoolFloor(mission, state) {
 
 // ==================== HOLD MODSTAND: KLOAKRENSNINGSANLÆGGET ====================
 function renderResistanceSewer(mission, state) {
-    const isValvesCorrect = checkValves(mission.correctValves, state.valves);
-
     return `
         <div class="dossier-workstation">
             <div class="workstation-header">
@@ -185,10 +183,10 @@ function checkValves(correct, current) {
            current.syd === correct.syd;
 }
 
-function setupSchoolFloorInteractions(container, mission, state, onComplete) {
+function setupSchoolFloorInteractions(container, char, mission, state, onComplete) {
     const saveAndRefresh = () => {
         localStorage.setItem('vih_m3_state', JSON.stringify(state));
-        initMission3(container, { team: 'Skole' }, mission, onComplete);
+        initMission3(container, char, mission, onComplete);
     };
 
     // Nulstil tryk på planker
@@ -209,7 +207,6 @@ function setupSchoolFloorInteractions(container, mission, state, onComplete) {
             if (!state.plankSequence.includes(plankId) && state.plankSequence.length < 4) {
                 state.plankSequence.push(plankId);
 
-                // Tjek om alle 4 planker er trykket
                 if (state.plankSequence.length === 4) {
                     const isSequenceCorrect = state.plankSequence.every(
                         (id, idx) => id === mission.correctPlankSequence[idx]
@@ -227,15 +224,16 @@ function setupSchoolFloorInteractions(container, mission, state, onComplete) {
         });
     });
 
-    if (state.roomSealed) {
+    // RETTET: Thormod kan komme videre så snart lugen er åbnet!
+    if (state.trapdoorOpen || state.roomSealed) {
         onComplete();
     }
 }
 
-function setupResistanceSewerInteractions(container, mission, state, onComplete) {
+function setupResistanceSewerInteractions(container, char, mission, state, onComplete) {
     const saveAndRefresh = () => {
         localStorage.setItem('vih_m3_state', JSON.stringify(state));
-        initMission3(container, { team: 'Modstand' }, mission, onComplete);
+        initMission3(container, char, mission, onComplete);
     };
 
     // Ventil-justering (+ / -)
